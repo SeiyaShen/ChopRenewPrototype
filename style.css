@@ -1,0 +1,195 @@
+/* 统一尺寸计算方式 */
+* {
+  box-sizing: border-box;
+}
+
+/* 清除浏览器默认边距 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* 整体页面 */
+body {
+  font-family:
+    Arial,
+    "Microsoft YaHei",
+    sans-serif;
+
+  background: #f3f4f6;
+  color: #222;
+}
+
+/* 欢迎页 */
+.welcome-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+/* 欢迎卡片 */
+.welcome-card {
+  width: min(520px, 100%);
+
+  padding: 48px;
+  background: white;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 40px
+    rgba(0, 0, 0, 0.12);
+}
+
+.welcome-card h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.welcome-card p {
+  margin-bottom: 28px;
+  color: #666;
+}
+
+/* 普通按钮 */
+.primary-button {
+  display: inline-block;
+
+  padding: 12px 26px;
+
+  border-radius: 6px;
+
+  color: white;
+  background: #c8202f;
+
+  text-decoration: none;
+}
+
+/* 原型页面外层 */
+.prototype-page {
+  min-height: 100vh;
+  padding: 20px;
+
+  overflow: auto;
+}
+
+/* 原型顶部工具栏 */
+.prototype-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 16px;
+  padding: 12px 16px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.08);
+}
+
+.prototype-toolbar h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* 工具栏中的按钮区域 */
+.toolbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* 工具栏按钮 */
+.toolbar-button {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+
+  background: white;
+  color: #333;
+
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 图片和点击区域共同使用的容器 */
+.prototype-container {
+  position: relative;
+
+  width: min(1440px, 100%);
+  margin: 0 auto;
+
+  background: white;
+
+  box-shadow:
+    0 8px 32px
+    rgba(0, 0, 0, 0.14);
+}
+
+/* 原型图片 */
+.prototype-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* 透明点击区域 */
+.hotspot {
+  position: absolute;
+  z-index: 10;
+
+  display: block;
+
+  cursor: pointer;
+
+  /* 正式展示时保持透明 */
+  background: transparent;
+
+  /* 防止链接文字显示 */
+  color: transparent;
+  text-decoration: none;
+}
+
+/* 调试模式下显示点击区域 */
+.debug .hotspot {
+  background: rgba(255, 0, 0, 0.22);
+  outline: 2px solid red;
+}
+
+/* 小屏幕适配 */
+@media (max-width: 768px) {
+  .prototype-page {
+    padding: 8px;
+  }
+
+  .prototype-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolbar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
