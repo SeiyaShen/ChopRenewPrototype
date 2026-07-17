@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>单据详情｜盖章系统原型</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="prototype-page">
+
+    <header class="prototype-toolbar">
+      <h1>单据详情</h1>
+
+      <div class="toolbar-actions">
+        <a
+          class="toolbar-button"
+          href="my-application.html"
+        >
+          返回我的申请
+        </a>
+
+        <button
+          class="toolbar-button"
+          type="button"
+          onclick="toggleDebug()"
+        >
+          显示点击区域
+        </button>
+
+        <button
+          class="toolbar-button"
+          type="button"
+          onclick="toggleFullscreen()"
+        >
+          全屏查看
+        </button>
+      </div>
+    </header>
+
+    <section
+      id="prototype"
+      class="prototype-container"
+    >
+      <img
+        class="prototype-image"
+        src="images/Picture2-3-1.png"
+        alt="单据详情页原型"
+      >
+
+      <!-- 返回我的申请 -->
+      <a
+        class="hotspot"
+        href="my-application.html"
+        aria-label="返回我的申请"
+
+        style="
+          left: 2%;
+          top: 10%;
+          width: 7%;
+          height: 5%;
+        "
+      ></a>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
